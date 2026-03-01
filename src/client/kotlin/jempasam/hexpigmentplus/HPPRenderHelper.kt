@@ -2,6 +2,7 @@ package jempasam.hexpigmentplus
 
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.minecraft.client.MinecraftClient
+import net.minecraft.client.render.OverlayTexture
 import net.minecraft.client.render.RenderLayer
 import net.minecraft.client.render.VertexConsumerProvider
 import net.minecraft.client.render.item.ItemRenderer
@@ -75,7 +76,7 @@ object HPPRenderHelper {
                 ColorHelper.Argb.getGreen(quad_color)/255f,
                 ColorHelper.Argb.getBlue(quad_color)/255f,
                 light,
-                0
+                OverlayTexture.DEFAULT_UV
             )
         }
     }

@@ -15,6 +15,10 @@ repositories {
 	flatDir {
 		dir 'libs'
 	}
+	maven {
+		name = "Modmuss50"
+		url = "https://maven.modmuss50.me/"
+	}
 	maven{
 		name = "Blamejared"
 		url ="https://maven.blamejared.com/"
@@ -96,13 +100,20 @@ dependencies {
 	}
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:$cardinalComponentsVersion"
 	modImplementation "maven.modrinth:paucal:$paucalVersion"
-	modImplementation "vazkii.patchouli:Patchouli:$minecraft_version-$patchouliVersion-FABRIC"
+	//modImplementation "vazkii.patchouli:Patchouli:$minecraft_version-$patchouliVersion-FABRIC"
+	modImplementation "me.zeroeightsix:fiber:${project.fiber_version}"
+	modImplementation "maven.modrinth:patchouli:${project.minecraft_version}-$patchouliVersion-fabric"
 	modImplementation("maven.modrinth:inline:$inlineVersion-fabric")
 	modImplementation("maven.modrinth:trinkets:$trinketsVersion")
 	modLocalRuntime files("$rootProject.rootDir/lib/serialization-hooks-0.4.99999.jar")
 	modImplementation("maven.modrinth:hex-casting:$hexcastingVersion"){
 		exclude module: "phosphor"
 	}
+
+	modLocalRuntime "maven.modrinth:iris:$irisVersion+${project.minecraft_version}"
+	modLocalRuntime "maven.modrinth:sodium:mc${project.minecraft_version}-$sodiumVersion-fabric"
+	modLocalRuntime "org.anarres:jcpp:1.4.14"
+	modLocalRuntime "io.github.douira:glsl-transformer:2.0.0-pre13"
 }
 
 processResources {
